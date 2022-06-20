@@ -12,6 +12,7 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     flex-direction: row;
+    margin: 0;
 }
 
 .toolbar img {
@@ -81,6 +82,7 @@ a:hover {
     height: 195px;
     background-color: #003049;
     text-align: center;
+    margin: 0;
 }
 
 #footer img {
