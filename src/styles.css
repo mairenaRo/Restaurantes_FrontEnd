@@ -16,7 +16,7 @@
 }
 
 .toolbar img {
-    margin-left: 300px;
+    margin-left: 20px;
 }
 
 .toolbar #inicio-page,
@@ -52,10 +52,10 @@
     margin-left: 25px;
 }
 
-.content {
+/* .content {
     margin-left: 300px;
     margin-right: 300px;
-}
+} */
 
 .toolbar #login-button:hover {
     background-color: #630A10;
@@ -73,7 +73,7 @@ a:hover {
     color: #0E0D0D;
 }
 
-#footer {
+ #footer {
     position: relative;
     bottom: 0;
     left: 0;
@@ -89,4 +89,62 @@ a:hover {
     margin-top: 30px;
     width: 155px;
     height: 146px;
+}
+/* ---------------------------------------nuevo--------------------------------------------------- */
+.navColor {
+    background-color: #9E2A2B;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.centerT {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+footer{
+    background-color: #003049;
+    text-align: center;
+}
+
+.footerImg {
+    max-width: 155px;
+    max-height: 146px;
+} 
+
+.footerP{
+    background-color: #669BBC;
+}
+
+.content {
+    justify-content: center;
+}
+
+.navList{
+    padding-left: 50px;
+}
+
+.navImg{
+    padding-left: 200px;
+}
+
+.loginImg{
+
+    background-color: #9E2A2B;
+}
+
+li #login-button:hover {
+    background-color: #630A10;
+    opacity: 0.8;
+}
+
+li #login-button {
+    border: none;
+    border-radius: 10px;
+    background-color: #9E2A2B;
+    text-align: center;
+    height: 60px;
 }
