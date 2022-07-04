@@ -52,11 +52,6 @@
     margin-left: 25px;
 }
 
-/* .content {
-    margin-left: 300px;
-    margin-right: 300px;
-} */
-
 .toolbar #login-button:hover {
     background-color: #630A10;
     opacity: 0.8;
