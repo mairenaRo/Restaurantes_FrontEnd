@@ -1,74 +1,49 @@
-.toolbar {
-    font-family: 'Lato', sans-serif;
-    height: 125px;
-    width: 100%;
-    display: flex;
-    align-content: center;
-    align-items: center;
+/* navbar */
+.navbar {
     background-color: #9E2A2B;
-    color: #FBF8F1;
-    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
     font-weight: 600;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+}
+.nav-link {
+    text-align: center;
+    color: #FBF8F1;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #0E0D0D;
+}
+
+.navbar-collapse {
     flex-direction: row;
-    margin: 0;
+    justify-content: flex-end;
 }
 
-.toolbar img {
-    margin-left: 20px;
+.container-fluid {
+    --bs-gutter-x: 0;
+    justify-content: space-between;
+    width: 70%;
 }
 
-.toolbar #inicio-page,
-#restaurante-page {
-    text-align: center;
-    height: 40px;
-    margin-right: 25px;
-    margin-left: 25px;
+li #login-button:hover {
+    background-color: #630A10;
+    opacity: 0.8;
 }
 
-.toolbar #preguntas-page,
-#nosotros-page {
-    text-align: center;
-    height: 60px;
-    margin-right: 25px;
-    margin-left: 25px;
-}
-
-.toolbar #contacto-page {
-    text-align: center;
-    height: 40px;
-    margin-right: 25px;
-    margin-left: 25px;
-}
-
-.toolbar #login-button {
+li #login-button {
     border: none;
     border-radius: 10px;
     background-color: #9E2A2B;
     text-align: center;
     height: 60px;
-    margin-right: 275px;
-    margin-left: 25px;
 }
 
-.toolbar #login-button:hover {
-    background-color: #630A10;
-    opacity: 0.8;
-}
-
-a,
-a:visited,
-a:hover {
-    color: #FBF8F1;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0E0D0D;
-}
-
- #footer {
+/* footer */
+#footer {
     position: relative;
     bottom: 0;
     left: 0;
@@ -85,20 +60,6 @@ a:hover {
     width: 155px;
     height: 146px;
 }
-/* ---------------------------------------nuevo--------------------------------------------------- */
-.navColor {
-    background-color: #9E2A2B;
-    font-family: 'Lato', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    width: 100%;
-}
-
-.centerT {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
 
 footer{
     background-color: #003049;
@@ -112,34 +73,4 @@ footer{
 
 .footerP{
     background-color: #669BBC;
-}
-
-.content {
-    justify-content: center;
-}
-
-.navList{
-    padding-left: 50px;
-}
-
-.navImg{
-    padding-left: 200px;
-}
-
-.loginImg{
-
-    background-color: #9E2A2B;
-}
-
-li #login-button:hover {
-    background-color: #630A10;
-    opacity: 0.8;
-}
-
-li #login-button {
-    border: none;
-    border-radius: 10px;
-    background-color: #9E2A2B;
-    text-align: center;
-    height: 60px;
 }
