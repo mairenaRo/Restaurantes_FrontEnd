@@ -11,6 +11,7 @@ import { APP_ROUTING } from './app.routes';
 
 //Componentes
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { BodyComponent } from './components/body/body.component';
@@ -25,6 +26,7 @@ import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
+    NavbarComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
