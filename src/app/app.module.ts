@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BodyComponent } from './components/body/body.component';
+import { MapComponent } from './map/map.component';
 
 // Aquí vamos a importar los componentes para luego, este es el cerebro
 
@@ -13,7 +14,8 @@ import { BodyComponent } from './components/body/body.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BodyComponent
+    BodyComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule
