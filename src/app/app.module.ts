@@ -1,6 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
+// Rutas
+import { APP_ROUTING } from './app.routes';
+
+
+// Servicios
+
+
+//Componentes
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -28,7 +37,8 @@ import { HomeComponent } from './components/home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
