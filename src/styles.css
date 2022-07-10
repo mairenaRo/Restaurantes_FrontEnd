@@ -74,3 +74,5 @@ footer{
 .footerP{
     background-color: #669BBC;
 }
+
+@import url(https://unpkg.com/leaflet@1.8.0/dist/leaflet.css);
