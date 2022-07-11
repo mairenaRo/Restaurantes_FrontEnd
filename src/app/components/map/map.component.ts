@@ -24,7 +24,7 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const map = new Map('map').setView([DEFAULT_LAT, DEFAULT_LON], 13);
+    const map = new Map('map').setView([DEFAULT_LAT, DEFAULT_LON], 12);
     tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '© OpenStreetMap'
