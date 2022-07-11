@@ -1,3 +1,11 @@
   #map {
     height: 500px;
   }
+
+  .tituloMap{
+    text-align: center;
+    border-radius: 10px;
+    color: #FBF8F1;
+    margin-top: 15px;
+    background-color: #003049;
+  }
