@@ -1,8 +1,9 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import {Icon, Map, Marker, tileLayer} from 'leaflet';
+import {Icon, Map, marker, point, tileLayer} from 'leaflet';
+import markers from './dataMarkers';
 
-export const DEFAULT_LAT = 10.0755368;
-export const DEFAULT_LON =  -84.3222142;
+export const DEFAULT_LAT = 0;
+export const DEFAULT_LON =  0;
 export const TITULO = 'Proyecto';
 export const ResIcon = new Icon({
   iconUrl: 'assets/PIN2.png',
@@ -29,10 +30,13 @@ export class MapComponent implements OnInit {
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
-    var marker = new Marker([10.07462,-84.31006],{icon: ResIcon}).addTo(map)
-    .bindPopup('<h6>Los Barriles</h6>Restaurante familiar, cocina de enfoque mixta.<br>Precio: $');
-    var marker2 = new Marker([10.07492,-84.31156],{icon: ResIcon}).addTo(map)
-    .bindPopup('<h6>5/20 Grill</h6>Restaurante familiar, cocina de enfoque tradicional venezolana-mixta.<br>Precio: $$');
+    markers.map((point) => {
+      marker([point.lat, point.lon],{icon: ResIcon}).addTo(map).bindPopup(point.name+'Descripción: '+point.description+'<br>Precio: '+point.price);
+    });
+
+    map.fitBounds([
+      ...markers.map(point => [point.lat,point.lon] as [number, number])
+    ]);
 
   }
 
