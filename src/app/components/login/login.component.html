@@ -1,5 +1,5 @@
 <h1>Iniciar Sesión</h1>
-<p>Si no tienes cuenta, <a [routerLink]="['RegisterComponent']">Regístrate aquí</a></p>
+<p>Si no tienes cuenta, <a href='RegisterComponent'>Regístrate aquí</a></p>
 <div class="container">
   <form>
     <div class="mb-3">
@@ -15,10 +15,15 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
     </div>
-    <button type="submit" class="btn">Ingresar</button>
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn">Ingresar</button>
+    </div>
   </form>
 </div>
-<div>
-  <h4>Iniciar sesión con Google:<br><button class="googleLog"><img src="./assets/google.png" width="50px" height="50px"></button></h4>
+<div class="google">
+  <h4>Iniciar sesión con Google:<br><button class="googleLog"><img src="./assets/google.png" width="50px"
+        height="50px"></button></h4>
 </div>
-<p>No recuerdas tu contraseña, haz clic aquí:<br><a [routerLink]="['ResetPassword']">Olvidé mi contraseña.</a></p>
+<div class="reset">
+  <p>No recuerdas tu contraseña, haz clic aquí:<br><a href='RecoveryComponent'>Olvidé mi contraseña.</a></p>
+</div>

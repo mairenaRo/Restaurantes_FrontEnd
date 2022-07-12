@@ -24,6 +24,7 @@ import { RestaurantsComponent } from './components/restaurants/restaurants.compo
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RecoveryComponent } from './components/recovery/recovery.component';
 
 // Aquí vamos a importar los componentes para luego, este es el cerebro
 
@@ -40,7 +41,8 @@ import { RegisterComponent } from './components/register/register.component';
     RestaurantsComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RecoveryComponent
   ],
   imports: [
     BrowserModule,
