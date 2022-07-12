@@ -1,0 +1,56 @@
+h1 {
+    padding-top: 2%;
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+form {
+    font-family: 'Lato', sans-serif;
+}
+
+.container{
+    padding-top: 1%;
+    position: relative;
+    width: 40%;
+}
+
+.btn {
+    color: #fff;
+    background-color: #9E2A2B;
+}
+
+.btn:hover {
+    background-color: #FFF;
+    color: #9E2A2B;
+    border-color: #9E2A2B ;
+}
+
+.form-check-input:checked {
+    background-color: #630A10;
+    border-color: #630A10;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+.googleLog {
+    border: 0;
+    background-color: transparent;
+}
+
+.googleLog:hover {
+    border: 1px solid;
+    border-color: #630A10;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #888888;;
+}
+
+@import url(https://unpkg.com/leaflet@1.8.0/dist/leaflet.css);

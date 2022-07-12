@@ -4,6 +4,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FaquestionsComponent } from './components/faquestions/faquestions.component';
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -13,7 +14,7 @@ const APP_ROUTES: Routes = [
   { path: 'ContactUsComponent', component: ContactUsComponent },
   { path: 'FaquestionsComponent', component: FaquestionsComponent },
   { path: 'RestaurantsComponent', component: RestaurantsComponent },
-
+  {path: 'LoginComponent', component: LoginComponent},
 
 
 
