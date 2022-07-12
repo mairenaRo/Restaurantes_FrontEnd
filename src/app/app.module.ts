@@ -22,6 +22,7 @@ import { FaquestionsComponent } from './components/faquestions/faquestions.compo
 import { RestaurantsComponent } from './components/restaurants/restaurants.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 // Aquí vamos a importar los componentes para luego, este es el cerebro
 
@@ -38,7 +39,8 @@ import { LoginComponent } from './components/login/login.component';
     FaquestionsComponent,
     RestaurantsComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
