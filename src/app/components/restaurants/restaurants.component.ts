@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { RestaurantesService } from 'src/app/services/restaurantes.service';
+import { RestauranteModel } from '../../models/restaurante.model';
+
 
 @Component({
   selector: 'app-restaurants',
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantsComponent implements OnInit {
 
-  constructor() { }
+  restaurante: RestauranteModel = new RestauranteModel();
+
+  constructor(private restaurantesService: RestaurantesService) { }
 
   ngOnInit(): void {
+
+    this.restaurantesService.getRestaurante()
+      .subscribe(resp => {
+        console.log(resp);
+      })
+
   }
+
+
+  //para comprobar si un formulario es valido
+  guadar( form: NgForm ) {
+
+    // if (form.invalid) {
+    //     console.log('Formulario no valido');
+    //     return;
+    // }
+
+
+
+
+  }
+
 
 }
