@@ -3,30 +3,39 @@
         <a class="navbar logo" [routerLink]="['home']" href="./src/index.html">
             <img src="./assets/NombreSinFondoPequenno.png" />
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['home']" [routerLinkActive]="'active'">INICIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['RestaurantsComponent']" [routerLinkActive]="'active'">RESTAURANTES</a>
+                    <a class="nav-link" [routerLink]="['RestaurantsComponent']"
+                        [routerLinkActive]="'active'">RESTAURANTES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['FaquestionsComponent']" [routerLinkActive]="'active'">PREGUNTAS<br>FRECUENTES</a>
+                    <a class="nav-link" [routerLink]="['FaquestionsComponent']"
+                        [routerLinkActive]="'active'">PREGUNTAS<br>FRECUENTES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['AboutUsComponent']" [routerLinkActive]="'active'">SOBRE<br>NOSOTROS</a>
+                    <a class="nav-link" [routerLink]="['AboutUsComponent']"
+                        [routerLinkActive]="'active'">SOBRE<br>NOSOTROS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="['ContactUsComponent']" [routerLinkActive]="'active'">CONTÁCTENOS</a>
+                    <a class="nav-link" [routerLink]="['ContactUsComponent']"
+                        [routerLinkActive]="'active'">CONTÁCTENOS</a>
                 </li>
                 <li class="nav-item">
                     <button id="login-button" height="44" width="48">
-              <input [routerLink]="['LoginComponent']" [routerLinkActive]="'active'" type="image" src="./assets/Login.png" height="34" width="38" />
-            </button>
+                        <input [routerLink]="['LoginComponent']" [routerLinkActive]="'active'" type="image"
+                            src="./assets/Login.png" height="34" width="38" />
+                    </button>
+                    <button *ngIf="userLogged|async as user" (click)="logOutUser()" id="logOut-button" height="44" width="48">
+                        CERRAR SESIÓN
+                    </button>
                 </li>
             </ul>
         </div>
