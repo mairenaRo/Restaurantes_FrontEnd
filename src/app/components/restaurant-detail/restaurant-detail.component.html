@@ -1,0 +1,45 @@
+<div class="container-fluid" style="margin-top: 50px;">
+    <h2 style="text-align: center;">Nombre del restaurante</h2>
+
+    <div class="row" style="justify-content: center;">
+        <div class="col-12">
+            <img class="img-fluid" src="./assets/restaurante.jpg" alt="Imagen del restaurantes">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <p>Descripcion de restaurante</p>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="userLogged|async as user; else elseBlock">
+        <div class="mb-3 col-12" >
+            <label for="inputMessage" class="form-label">Comentar</label>
+            <textarea class="form-control" id="inputMessage" rows="5" required></textarea>
+            <a class="btn" style="background-color: #9E2A2B; color: white; margin-top: 10px;">Publicar</a>
+        </div>
+    </div>
+
+    <ng-template #elseBlock>
+        <div class="row" >
+            <div class="mb-3 col-12">
+                <label for="inputMessage" class="form-label">Comentar</label>
+                <textarea class="form-control" id="inputMessage" rows="5" required disabled>Debe iniciar sesion</textarea>
+                <a class="btn" style="background-color: #9E2A2B; color: white; margin-top: 10px;" disabled>Publicar</a>
+            </div>
+        </div>
+    </ng-template>
+    <h4>Comentarios</h4>
+    <div class="container" style=" overflow: scroll; max-height: 500px;">
+        
+        <div class="row" style="border-top-style: groove; border-left-style: groove;
+         border-right-style: groove; border-bottom-style: groove; margin-bottom: 15px;" 
+         *ngFor="let num of [1,2,3,4,5,6]">
+            <p><Strong>Nombre de Usuario {{num}}:</Strong></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error expedita optio eius fugit tempore laboriosam excepturi laudantium rerum eligendi possimus aspernatur, explicabo deleniti vitae tempora delectus, consequatur voluptates nemo quidem.</p>
+
+        </div>
+    </div>
+
+</div>
