@@ -28,11 +28,15 @@ export class LoginComponent implements OnInit {
         .then(res => {
           if (res?.user?.emailVerified == true) {
             console.log("Se registro: ", res);
+            alert('Inicio de sesión correcto.')
             this.router.navigateByUrl('/home');
           } else {
-            alert('No has verificado el correo.')
+            this.userService.sendVerificationEmail(res?.user);
+            alert('No has verificado el correo.Por favor hazlo.')
           }
         })
+    } else {
+      alert('Error, no puedes dejar campos en blanco.');
     }
   }
 

@@ -17,6 +17,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logOutUser(){
+    alert('La sesión se cerró correctamente.');
     this.userService.logOut();
   }
 

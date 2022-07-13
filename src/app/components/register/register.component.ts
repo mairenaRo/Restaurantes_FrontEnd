@@ -27,13 +27,14 @@ export class RegisterComponent implements OnInit {
       console.log(this.user)
       this.userService.register(email, password)
         .then(res => {
-          //this.userService.sendVerificationEmail(res?.user);
-          this.userService.sendVerificationEmail(this.userService.getCurrentUser());
+          this.userService.sendVerificationEmail(res?.user);
+          //this.userService.sendVerificationEmail(this.userService.getCurrentUser());
           alert('Se te ha enviado al correo, un enlace para verificación, por favor revisa tu buzón.');
           console.log("Se registro: ", res);
         })
         this.router.navigateByUrl('/home');
     } else {
+      alert('Las contraseñas no coinciden');
       console.log("Las contraseñas no coinciden");
     }
   }
