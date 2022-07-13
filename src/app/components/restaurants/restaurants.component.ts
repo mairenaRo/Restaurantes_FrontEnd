@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { RestaurantesService } from 'src/app/services/restaurantes.service';
 import { RestauranteModel } from '../../models/restaurante.model';
 
@@ -15,7 +16,7 @@ export class RestaurantsComponent implements OnInit {
 
   // restaurante: RestauranteModel = new RestauranteModel();
 
-  constructor(private restaurantesService: RestaurantesService) { }
+  constructor(private restaurantesService: RestaurantesService, private router: Router) { }
 
   ngOnInit() {
 
@@ -41,5 +42,8 @@ export class RestaurantsComponent implements OnInit {
 
   }
 
+  showDetails(){
+    this.router.navigateByUrl("/RestaurantDetailComponent");
+  }
 
 }
