@@ -44,9 +44,17 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.user;
     this.userService.loginWithGoogle(email, password)
       .then(res => {
+        alert('Inicio de sesión correcto.')
         console.log("Se registro: ", res);
         this.router.navigateByUrl('/home');
       })
   }
 
+  registerPage(){
+    this.router.navigateByUrl('/RegisterComponent');
+  }
+
+  forgotPassword(){
+    this.router.navigateByUrl('/RecoveryComponent');
+  }
 }
