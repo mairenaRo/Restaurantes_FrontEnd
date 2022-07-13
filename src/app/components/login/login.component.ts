@@ -23,12 +23,16 @@ export class LoginComponent implements OnInit {
 
   logSesion() {
     const { email, password } = this.user;
-    if(email != '' || password != ''){
+    if (email != '' || password != '') {
       this.userService.login(email, password)
-      .then(res => {
-        console.log("Se registro: ", res);
-      })
-      this.router.navigateByUrl('/home');
+        .then(res => {
+          if (res?.user?.emailVerified == true) {
+            console.log("Se registro: ", res);
+            this.router.navigateByUrl('/home');
+          } else {
+            alert('No has verificado el correo.')
+          }
+        })
     }
   }
 

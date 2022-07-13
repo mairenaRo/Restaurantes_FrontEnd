@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { TwitterAuthProvider } from "@firebase/auth";
 import firebase from "firebase/compat/app";
 
 @Injectable({
@@ -45,5 +46,22 @@ export class UserService{
 
     logOut(){
         this.auth.signOut();
+    }
+
+    sendRecoveryLink(email: string){
+        this.auth.sendPasswordResetEmail(email)
+        .then(()=>{
+
+        }, error => {
+            console.log('Algo fallo');
+        })
+    }
+
+    sendVerificationEmail(user: any){
+        user.sendVerificationEmail().then((res: any) => {
+            console.log('Email enviado')
+        }, (err : any) => {
+            console.log('Algo fallo')
+        })
     }
 }
