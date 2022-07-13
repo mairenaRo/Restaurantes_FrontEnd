@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
     this.userService.loginWithGoogle(email, password)
       .then(res => {
         console.log("Se registro: ", res);
+        this.router.navigateByUrl('/home');
       })
   }
 
