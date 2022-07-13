@@ -29,11 +29,11 @@
                         [routerLinkActive]="'active'">CONTÁCTENOS</a>
                 </li>
                 <li class="nav-item">
-                    <button id="login-button" height="44" width="48">
+                    <button *ngIf="userLogged!=null" id="login-button" height="44" width="48">
                         <input [routerLink]="['LoginComponent']" [routerLinkActive]="'active'" type="image"
                             src="./assets/Login.png" height="34" width="38" />
                     </button>
-                    <button *ngIf="userLogged|async as user" (click)="logOutUser()" id="logOut-button" height="44" width="48">
+                    <button [routerLink]="['LoginComponent']" *ngIf="userLogged|async as user" (click)="logOutUser()" id="logOut-button" height="44" width="48">
                         CERRAR SESIÓN
                     </button>
                 </li>

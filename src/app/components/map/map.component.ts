@@ -1,6 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import {Icon, Map, marker, point, tileLayer} from 'leaflet';
 import markers from './dataMarkers';
+import { RestaurantesService } from 'src/app/services/restaurantes.service';
 
 export const DEFAULT_LAT = 0;
 export const DEFAULT_LON =  0;
@@ -20,7 +21,7 @@ export class MapComponent implements OnInit {
   @Input() lon: number = DEFAULT_LON;
   @Input() titulo: string = TITULO;
 
-  constructor() {
+  constructor(private restaurantesMarkers: RestaurantesService) {
   }
 
   ngOnInit(): void {

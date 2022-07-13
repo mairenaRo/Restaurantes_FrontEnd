@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
 
   }
 
@@ -22,10 +23,13 @@ export class LoginComponent implements OnInit {
 
   logSesion() {
     const { email, password } = this.user;
-    this.userService.login(email, password)
+    if(email != '' || password != ''){
+      this.userService.login(email, password)
       .then(res => {
         console.log("Se registro: ", res);
       })
+      this.router.navigateByUrl('/home');
+    }
   }
 
   logWithGoogle() {

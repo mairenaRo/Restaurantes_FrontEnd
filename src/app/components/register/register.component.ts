@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +11,10 @@ export class RegisterComponent implements OnInit {
 
   user = {
     email: '',
-    password: ''
+    password: '',
+    confPassword: ''
   }
-  constructor(private userService: UserService) { 
+  constructor(private userService: UserService, private router: Router) {
 
   }
 
@@ -20,12 +22,17 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    console.log(this.user)
-    const {email, password} = this.user;
-    this.userService.register(email, password)
-    .then(res => {
-      console.log("Se registro: ",res);
-    })
+    const { email, password, confPassword } = this.user;
+    if (password === confPassword) {
+      console.log(this.user)
+      this.userService.register(email, password)
+        .then(res => {
+          console.log("Se registro: ", res);
+        })
+        this.router.navigateByUrl('/home');
+    } else {
+      console.log("Las contraseñas no coinciden");
+    }
   }
 
 }
