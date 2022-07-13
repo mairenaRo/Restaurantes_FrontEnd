@@ -11,15 +11,18 @@ import { RestauranteModel } from '../../models/restaurante.model';
 })
 export class RestaurantsComponent implements OnInit {
 
-  restaurante: RestauranteModel = new RestauranteModel();
+  restaurantes: RestauranteModel[] = [];
+
+  // restaurante: RestauranteModel = new RestauranteModel();
 
   constructor(private restaurantesService: RestaurantesService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
 
     this.restaurantesService.getRestaurante()
       .subscribe(resp => {
         console.log(resp);
+        this.restaurantes = resp;
       })
 
   }

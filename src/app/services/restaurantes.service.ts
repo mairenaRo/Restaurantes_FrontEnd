@@ -12,49 +12,36 @@ export class RestaurantesService {
   //Propiedad url para llamarlo en todos
   private url = 'https://restaurantes-app-27649-default-rtdb.firebaseio.com';
 
-
-
-
   constructor(private http: HttpClient) { }
-
-
-
-  //crearRestaurante
-  // crearRestaurante(restaurante: RestauranteModel) {
-
-  //   return this.http.post(`${this.url} /restaurantes.json`, restaurante);
-
-  // }
-
-
-  //actualizarRestaurante (Observable)
 
   //obtenerRestaurante
   getRestaurante() {
-    return this.http.get(`${this.url}/Restaurantes.json`)
+    return this.http.get(`${this.url}//Restaurantes 2.json`)
       .pipe(
-        map( this.crearArreglo)
+        map( this.crearArreglo )
       );
   }
 
-  private crearArreglo( restauranteObj: object) {
+
+    //Crear arreglo
+    private crearArreglo( restaurantesObj: any) {
 
     const restaurantes: RestauranteModel[] = [];
 
-    console.log(restauranteObj);
+    //ESTAS 2 FUNCIONAN
+      console.log(restaurantesObj);
 
-    if (restauranteObj == null) { return []; }
-
-
+    if (restaurantesObj == null) { return []; }
 
     //ESTO DE AQUI ES PARA VERLO COMO UN ARREGLO
-    // Object.keys(restauranteObj).forEach(key => {
-    // const restaurante: RestauranteModel = restauranteObj[key];
-    //   restaurante.id = key;
-    //   heroes.push(restaurante);
-    // });
+   /*  Object.keys(restaurantesObj).forEach(key => {
+      const restaurante: RestauranteModel = restaurantesObj[key];
+      restaurante.id = key;
+      restaurantes.push(restaurante);
+    }); */
 
-    return 'Hola Mundo';
+    return restaurantes;
+    //return 'hola mundo';
   }
 
 
