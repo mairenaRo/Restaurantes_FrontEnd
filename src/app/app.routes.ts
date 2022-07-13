@@ -7,6 +7,7 @@ import { RestaurantsComponent } from './components/restaurants/restaurants.compo
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RecoveryComponent } from './components/recovery/recovery.component';
+import { RestaurantDetailComponent } from './components/restaurant-detail/restaurant-detail.component';
 
 
 
@@ -19,6 +20,7 @@ const APP_ROUTES: Routes = [
   { path: 'LoginComponent', component: LoginComponent},
   { path: 'RegisterComponent', component: RegisterComponent},
   { path: 'RecoveryComponent', component: RecoveryComponent},
+  { path: 'RestaurantDetailComponent', component: RestaurantDetailComponent},
 
 
 

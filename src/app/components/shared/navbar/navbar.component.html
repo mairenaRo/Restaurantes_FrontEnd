@@ -33,9 +33,16 @@
                         <input [routerLink]="['LoginComponent']" [routerLinkActive]="'active'" type="image"
                             src="./assets/Login.png" height="34" width="38" />
                     </button>
-                    <button [routerLink]="['LoginComponent']" *ngIf="userLogged|async as user" (click)="logOutUser()" id="logOut-button" height="44" width="48">
+                    <button *ngIf="userLogged|async as user; else elseBlock" (click)="logOutUser()" id="logOut-button" height="44" width="48">
                         CERRAR SESIÓN
                     </button>
+                    <ng-template  #elseBlock>
+                        <button id="login-button" height="44" width="48">
+                            <input [routerLink]="['LoginComponent']" [routerLinkActive]="'active'" type="image"
+                                src="./assets/Login.png" height="34" width="38" />
+                        </button>
+                    </ng-template>
+                    
                 </li>
             </ul>
         </div>

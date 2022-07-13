@@ -24,6 +24,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RecoveryComponent } from './components/recovery/recovery.component';
+import { RestaurantDetailComponent } from './components/restaurant-detail/restaurant-detail.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 
@@ -43,7 +44,8 @@ import { AngularFireModule } from '@angular/fire/compat';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    RecoveryComponent
+    RecoveryComponent,
+    RestaurantDetailComponent
   ],
   imports: [
     BrowserModule,
