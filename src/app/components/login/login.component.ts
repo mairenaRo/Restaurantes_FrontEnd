@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
   logSesion() {
     const { email, password } = this.user;
-    if (email != '' || password != '') {
+    if (email != '' && password != '' && password.length >= 6) {
       this.userService.login(email, password)
         .then(res => {
           if (res?.user?.emailVerified == true) {
@@ -34,9 +34,15 @@ export class LoginComponent implements OnInit {
             this.userService.sendVerificationEmail(res?.user);
             alert('No has verificado el correo.Por favor hazlo.')
           }
-        })
-    } else {
+        });
+        if (this.userService.emailVerifiedCheck(this.userService.getCurrentUser())==false){
+          this.userService.sendVerificationEmail(this.userService.getCurrentUser());
+          alert('No has verificado el correo.Por favor hazlo.');
+        }
+    } else if (email != '' && password != ''){
       alert('Error, no puedes dejar campos en blanco.');
+    } else {
+      alert('No se pudo iniciar sesión, datos erróneos.');
     }
   }
 

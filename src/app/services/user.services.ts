@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { Router } from "@angular/router";
 import { TwitterAuthProvider } from "@firebase/auth";
 import firebase from "firebase/compat/app";
 
@@ -9,7 +10,7 @@ import firebase from "firebase/compat/app";
 
 export class UserService{
 
-    constructor (private auth: AngularFireAuth){
+    constructor (private auth: AngularFireAuth, private router: Router){
 
     }
 
@@ -18,7 +19,8 @@ export class UserService{
             return await this.auth.createUserWithEmailAndPassword(email, password);
         } catch (error) {
             console.log('error en registrando:' + error);
-            return null;
+            this.router.navigateByUrl('/LoginComponent');
+            return alert('Ya existe una cuenta con este correo. Por favor, usa otra dirección de correo electrónico o inicia sesión.');
         }
     }
 
@@ -63,5 +65,10 @@ export class UserService{
         }, (err : any) => {
             console.log('Algo fallo')
         })
+    }
+
+
+    emailVerifiedCheck(user: any){
+        return user.emailVerified;
     }
 }
