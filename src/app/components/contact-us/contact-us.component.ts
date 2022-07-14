@@ -33,7 +33,6 @@ export class ContactUsComponent implements OnInit {
           }
         );
         Notiflix.Notify.success('Mensaje Enviado!');
-        //this.router.navigateByUrl('/ContactUsComponent');
     }else{
       Notiflix.Notify.failure('Error al enviar el mensaje');
     }
