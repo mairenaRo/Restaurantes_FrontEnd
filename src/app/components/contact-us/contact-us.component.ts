@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import * as Notiflix from 'notiflix';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ import * as Notiflix from 'notiflix';
 @Injectable()
 export class ContactUsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,7 @@ export class ContactUsComponent implements OnInit {
           }
         );
         Notiflix.Notify.success('Mensaje Enviado!');
+        //this.router.navigateByUrl('/ContactUsComponent');
     }else{
       Notiflix.Notify.failure('Error al enviar el mensaje');
     }
