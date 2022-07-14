@@ -24,6 +24,7 @@
     "firebase": "^9.9.0",
     "leaflet": "^1.8.0",
     "leaflet-routing-machine": "^3.2.12",
+    "notiflix": "^3.2.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
