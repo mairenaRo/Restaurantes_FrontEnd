@@ -16,7 +16,7 @@
         <div class="row" style="justify-content: center;">
             <div class="mb-3 col-7">
                 <label for="inputTelephone" class="form-label">Teléfono</label>
-                <input type="number" class="form-control"  name="telephone" ngModel required #telephone="ngModel">
+                <input type="number" class="form-control"  name="telephone" pattern="[0-9]{8}" ngModel required #telephone="ngModel">
               </div>
         </div>
         <div class="row" style="justify-content: center;">
