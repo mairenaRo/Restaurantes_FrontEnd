@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.services';
 import { Router } from '@angular/router';
+import * as Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +18,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logOutUser(){
-    alert('La sesión se cerró correctamente.');
+    Notiflix.Notify.success('Registro con éxito.');
     this.userService.logOut();
   }
 

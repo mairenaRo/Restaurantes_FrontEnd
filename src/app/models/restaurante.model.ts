@@ -3,6 +3,7 @@
 export class RestauranteModel {
 
   id: any;
+  descripcionDetalle: string;
   nombre: string;
   descripcion: string;
   precio: string;
@@ -12,15 +13,16 @@ export class RestauranteModel {
 
 
 
-  constructor() {
+  constructor(id: any, descripcionDetalle: string, descripcion: string, lat: number, lon: number, nombre: string, precio: string, valoracion: number) {
 
-    this.id = 0;
-    this.nombre = "";
-    this.descripcion = "";
-    this.precio = "";
-    this.valoracion = 0;
-    this.lat = 0;
-    this.lon = 0;
+    this.id = id;
+    this.descripcionDetalle = descripcionDetalle;
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.precio = precio;
+    this.valoracion = valoracion;
+    this.lat = lat;
+    this.lon = lon;
 
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.services';
 import { Router } from '@angular/router';
+import * as Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-register',
@@ -29,20 +30,19 @@ export class RegisterComponent implements OnInit {
       this.userService.register(email, password)
         .then(res => {
           this.userService.sendVerificationEmail(res?.user);
-          //this.userService.sendVerificationEmail(this.userService.getCurrentUser());
-          alert('Se te ha enviado al correo, un enlace para verificación, por favor revisa tu buzón.');
+          Notiflix.Notify.success('Registro con éxito.');
           console.log("Se registro: ", res);
           this.router.navigateByUrl('/home');
         }, (error: any)=>{
-          alert('Al parecer el correo ya existe. Por favor Intenta con otro o recupera tu contraseña.');
+          Notiflix.Notify.failure('Al parecer el correo ya existe. Por favor Intenta con otro o recupera tu contraseña.');
         });
     } else if (password != confPassword) {
-      alert('Las contraseñas no coinciden');
+      Notiflix.Notify.failure('Las contraseñas no coinciden');
       console.log("Las contraseñas no coinciden");
     } else if (email == '' || email == null || password == '' || confPassword == '') {
-      alert('No pueden haber espacios vacíos.');
+      Notiflix.Notify.failure('No pueden haber espacios vacíos.');
     } else {
-      alert('La contraseña debe tener mínimo 6 caracteres por seguridad.');
+      Notiflix.Notify.failure('La contraseña debe tener mínimo 6 caracteres por seguridad.');
     }
   }
 

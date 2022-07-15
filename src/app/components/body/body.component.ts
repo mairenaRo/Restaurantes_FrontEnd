@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.services';
 
 @Component({
   selector: 'app-body',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+  userLogged = this.userService.getCurrentUser();
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }

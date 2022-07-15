@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as Notiflix from 'notiflix';
 import { UserService } from 'src/app/services/user.services';
 
 @Component({
@@ -21,6 +22,7 @@ export class RecoveryComponent implements OnInit {
   forgotPassword(){
     const {email} = this.user;
     this.userService.sendRecoveryLink(email);
+    Notiflix.Notify.success("Se te ha enviado el enlace al correo, por favor revisa tu buzón principal y no deseado.");
     this.router.navigateByUrl('/home');
   }
 }

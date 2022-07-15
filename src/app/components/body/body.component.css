@@ -1,0 +1,14 @@
+#activePorfile {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    background-color: #630A10;
+}
+
+.name {
+    color: #FBF8F1;
+}
+
+@import url(https://unpkg.com/leaflet@1.8.0/dist/leaflet.css);

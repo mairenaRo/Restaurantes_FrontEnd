@@ -3,6 +3,7 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Router } from "@angular/router";
 import { TwitterAuthProvider } from "@firebase/auth";
 import firebase from "firebase/compat/app";
+import * as Notiflix from "notiflix";
 
 @Injectable({
     providedIn: 'root'
@@ -47,6 +48,7 @@ export class UserService{
     }
 
     logOut(){
+        
         this.auth.signOut();
     }
 
@@ -66,7 +68,6 @@ export class UserService{
             console.log('Algo fallo')
         })
     }
-
 
     emailVerifiedCheck(user: any){
         return user.emailVerified;

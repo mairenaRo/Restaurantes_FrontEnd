@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.services';
 import { Router } from '@angular/router';
+import * as Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
         .then(res => {
           if (res?.user?.emailVerified == true) {
             console.log("Se registro: ", res);
-            alert('Inicio de sesión correcto.')
+            Notiflix.Notify.success('Inicio de sesion con éxito.');
             this.router.navigateByUrl('/home');
           } else {
             this.userService.sendVerificationEmail(res?.user);
@@ -40,9 +41,9 @@ export class LoginComponent implements OnInit {
           alert('No has verificado el correo.Por favor hazlo.');
         }
     } else if (email != '' && password != ''){
-      alert('Error, no puedes dejar campos en blanco.');
+      Notiflix.Notify.failure('Error, no puedes dejar campos en blanco.');
     } else {
-      alert('No se pudo iniciar sesión, datos erróneos.');
+      Notiflix.Notify.failure('No se pudo iniciar sesión, datos erróneos.');
     }
   }
 
@@ -50,7 +51,7 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.user;
     this.userService.loginWithGoogle(email, password)
       .then(res => {
-        alert('Inicio de sesión correcto.')
+        Notiflix.Notify.success('Inicio de sesión correcto.')
         console.log("Se registro: ", res);
         this.router.navigateByUrl('/home');
       })
