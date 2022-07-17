@@ -1,10 +1,10 @@
 <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 30px; margin-bottom: 30px;">
-    <div class="col" *ngFor="let num of [1,2,3,4,5,6]">
+    <div class="col" *ngFor="let restaurante of restaurantes">
         <div class="card">
             <img src="./assets/restaurante.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Restaurante {{num}}</h5>
-                <p class="card-text">Descripción del restaurante {{num}}</p>
+                <h5 class="card-title">Restaurante: {{ restaurante.nombre }} </h5>
+                <p class="card-text"> {{restaurante.descripcion}} </p>
                 <a class="btn" (click)="showDetails()" style="background-color: #9E2A2B; color: white;">Ver más</a>
             </div>
         </div>

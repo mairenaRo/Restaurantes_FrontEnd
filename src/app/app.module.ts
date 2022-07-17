@@ -27,6 +27,7 @@ import { RecoveryComponent } from './components/recovery/recovery.component';
 import { RestaurantDetailComponent } from './components/restaurant-detail/restaurant-detail.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
+import { RestaurantesService } from './services/restaurantes.service';
 
 // Aquí vamos a importar los componentes para luego, este es el cerebro
 
@@ -55,7 +56,7 @@ import { AngularFireModule } from '@angular/fire/compat';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RestaurantesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

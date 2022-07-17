@@ -14,34 +14,27 @@ export class RestaurantsComponent implements OnInit {
 
   restaurantes: RestauranteModel[] = [];
 
-  // restaurante: RestauranteModel = new RestauranteModel();
-
   constructor(private restaurantesService: RestaurantesService, private router: Router) { }
 
   ngOnInit() {
 
-    this.restaurantesService.getRestaurante()
-      .subscribe(resp => {
-        console.log(resp);
-        this.restaurantes = resp;
-      })
+    //Cargar Restaurante Video
+    this.restaurantesService.cargarRestaurantes().subscribe(misRestaurantes => {
+      console.log(misRestaurantes);
+      this.restaurantes = Object.values(misRestaurantes);
+      this.setRestaurantes(this.restaurantes);
+    });
+  }
+
+  //Metodo para arreglo version video
+  setRestaurantes(arrayRestaurantes: RestauranteModel[]) {
+
+    this.restaurantes = arrayRestaurantes;
 
   }
 
 
-  //para comprobar si un formulario es valido
-  guadar( form: NgForm ) {
-
-    // if (form.invalid) {
-    //     console.log('Formulario no valido');
-    //     return;
-    // }
-
-
-
-
-  }
-
+  //Metodo que redirecciona a Restaurant-detail
   showDetails(){
     this.router.navigateByUrl("/RestaurantDetailComponent");
   }
