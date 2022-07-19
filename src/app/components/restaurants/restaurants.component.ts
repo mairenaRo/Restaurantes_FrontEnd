@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RestaurantesService } from 'src/app/services/restaurantes.service';
 import { RestauranteModel } from '../../models/restaurante.model';
@@ -35,8 +34,9 @@ export class RestaurantsComponent implements OnInit {
 
 
   //Metodo que redirecciona a Restaurant-detail
-  showDetails(){
-    this.router.navigateByUrl("/RestaurantDetailComponent");
+  showDetails(restaurante: any) {
+    this.router.navigate(['/RestaurantDetailComponent'], {state: {data: {restaurante}}});
+    // this.router.navigateByUrl("/RestaurantDetailComponent");
   }
 
 }

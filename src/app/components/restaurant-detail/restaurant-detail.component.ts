@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.services';
 import { RestaurantesService } from 'src/app/services/restaurantes.service';
 import { RestauranteModel } from '../../models/restaurante.model';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -15,10 +17,15 @@ export class RestaurantDetailComponent implements OnInit {
 
   restaurantesDetallado: RestauranteModel[] = [];
 
+  restauranteDetallado: any;
 
-  constructor(private restaurantesService: RestaurantesService,private userService: UserService) { }
+  constructor(private location: Location, private router: Router, private restaurantesService: RestaurantesService, private userService: UserService) { }
 
   ngOnInit(): void {
+
+    let restaurante: any = this.location.getState();
+    this.restauranteDetallado = restaurante.data.restaurante;
+
 
     //Cargar restaurantes
     this.restaurantesService.cargarRestaurantes().subscribe(misRestaurantes => {
