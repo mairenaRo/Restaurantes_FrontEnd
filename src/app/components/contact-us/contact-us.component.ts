@@ -35,6 +35,7 @@ export class ContactUsComponent implements OnInit {
         .then((result: EmailJSResponseStatus) => {
           console.log(result.text);
           Notiflix.Notify.success('Mensaje Enviado!');
+          contactForm.reset();
         }, (error) => {
           console.log(error.text);
           Notiflix.Notify.failure('Error al enviar el mensaje!');
