@@ -1,9 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import * as Notiflix from 'notiflix';
-
 
 @Component({
   selector: 'app-contact-us',
@@ -15,26 +12,21 @@ import * as Notiflix from 'notiflix';
 @Injectable()
 export class ContactUsComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  sendEmail(contactForm: NgForm) {
-    if (contactForm.valid) {
-      const email = contactForm.value;
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-      this.http.post('https://formspree.io/f/meqnbwav',
-        { Nombre: email.nombre, Correo: email.email, Teléfono: email.telephone, Mensaje: email.message },
-        { 'headers': headers }).subscribe(
-          response => {
-            console.log(response);
-          }
-        );
+  public sendEmail(e: Event) {
+    e.preventDefault();
+    emailjs.sendForm('service_nom17qm', 'template_gebr2uh', e.target as HTMLFormElement, 'uTxV2Leqh6regmYGS')
+      .then((result: EmailJSResponseStatus) => {
+        console.log(result.text);
         Notiflix.Notify.success('Mensaje Enviado!');
-        contactForm.reset();
-    }else{
-      Notiflix.Notify.failure('Error al enviar el mensaje! Complete todos los espacios');
-    }
+      }, (error) => {
+        console.log(error.text);
+        Notiflix.Notify.failure('Error al enviar el mensaje! Complete todos los espacios');
+      });
   }
+
 }
