@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
-  constructor() { }
+  //videoUrl: string = "https://www.youtube.com/embed/wXPlxV4fO9A";
+
+  videoUrl: SafeResourceUrl;
+
+  constructor(private _sanitizer: DomSanitizer
+  ) {
+    this.videoUrl = this._sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/vYzjrNJML3E");
+    }
 
   ngOnInit(): void {
+
+
   }
+
+
+
+
+
+
+
 
 }

@@ -49,7 +49,7 @@ import { FquestionsService } from './services/fquestions.service';
     LoginComponent,
     RegisterComponent,
     RecoveryComponent,
-    RestaurantDetailComponent
+    RestaurantDetailComponent,
   ],
   imports: [
     BrowserModule,
