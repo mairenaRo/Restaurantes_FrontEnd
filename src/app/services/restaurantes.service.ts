@@ -16,14 +16,6 @@ export class RestaurantesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  // //obtenerRestaurante Funcional
-  // getRestaurante() {
-  //   return this.httpClient.get(`${this.url}//Restaurantes 2.json`)
-  //     .pipe(
-  //       map(this.crearArreglo)
-  //     );
-  // }
-
 
   //Ronny
   getRestaurantes() {
@@ -35,31 +27,36 @@ export class RestaurantesService {
     return this.httpClient.get(`${this.url}//Restaurantes 2.json`);
   }
 
+  //Video
+  cargarPreguntasFrecuentes() {
+    return this.httpClient.get(`${this.url}//Preguntas.json`);
 
 
-  //Crear arreglo
-  // private crearArreglo(restaurantesObj: any) {
-
-  //   const restaurantes: RestauranteModel[] = [];
-
-  //   //ESTAS 2 FUNCIONAN
-  //   console.log(restaurantesObj);
-
-  //   if (restaurantesObj == null) { return []; }
-
-  //   //ESTO DE AQUI ES PARA VERLO COMO UN ARREGLO
-  //   /*  Object.keys(restaurantesObj).forEach(key => {
-  //      const restaurante: RestauranteModel = restaurantesObj[key];
-  //      restaurante.id = key;
-  //      restaurantes.push(restaurante);
-  //    }); */
-
-  //   return restaurantes;
-  //   //return 'hola mundo';
-  // }
 
 
+    //Crear arreglo
+    // private crearArreglo(restaurantesObj: any) {
+
+    //   const restaurantes: RestauranteModel[] = [];
+
+    //   //ESTAS 2 FUNCIONAN
+    //   console.log(restaurantesObj);
+
+    //   if (restaurantesObj == null) { return []; }
+
+    //   //ESTO DE AQUI ES PARA VERLO COMO UN ARREGLO
+    //   /*  Object.keys(restaurantesObj).forEach(key => {
+    //      const restaurante: RestauranteModel = restaurantesObj[key];
+    //      restaurante.id = key;
+    //      restaurantes.push(restaurante);
+    //    }); */
+
+    //   return restaurantes;
+    //   //return 'hola mundo';
+    // }
+
+
+
+  }
 
 }
-
-

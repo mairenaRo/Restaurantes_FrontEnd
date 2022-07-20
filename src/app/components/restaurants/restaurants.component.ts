@@ -35,6 +35,7 @@ export class RestaurantsComponent implements OnInit {
 
   //Metodo que redirecciona a Restaurant-detail
   showDetails(restaurante: any) {
+    //Estamos sampandole el objeto estado en la sesion de chrome
     this.router.navigate(['/RestaurantDetailComponent'], {state: {data: {restaurante}}});
     // this.router.navigateByUrl("/RestaurantDetailComponent");
   }

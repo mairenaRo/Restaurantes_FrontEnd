@@ -42,12 +42,7 @@ export class RestaurantDetailComponent implements OnInit {
   }
 
 
-  definirRestaurante(arrayRestaurantes: RestauranteModel[]) {
 
-
-
-
-  }
 
 
 }
