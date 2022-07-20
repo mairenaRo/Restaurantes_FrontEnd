@@ -1,14 +1,14 @@
 
 export class PreguntaFrecuenteModel {
 
-  id: any;
-  txtPreguntaFrecuente: string;
+  Pregunta: string;
+  Respuesta: string;
 
 
-  constructor(id: any, txtPreguntaFrecuente: string) {
+  constructor( txtPreguntaFrecuente: string, respuesta: string) {
 
-    this.id = id;
-    this.txtPreguntaFrecuente = txtPreguntaFrecuente;
+    this.Pregunta = txtPreguntaFrecuente;
+    this.Respuesta= respuesta;
 
   }
 

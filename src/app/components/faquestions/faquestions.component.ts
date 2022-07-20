@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PreguntaFrecuenteModel } from '../../models/preguntaFrecuente.model';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { RestaurantesService } from 'src/app/services/restaurantes.service';
+import { FquestionsService } from 'src/app/services/fquestions.service';
 
 @Component({
   selector: 'app-faquestions',
@@ -13,20 +13,19 @@ export class FaquestionsComponent implements OnInit {
 
   arrayPreguntaFrecuente: PreguntaFrecuenteModel[] = [];
 
-  constructor(private restaurantesService: RestaurantesService, private router: Router, private location: Location) { }
+  constructor(private frecuentesService: FquestionsService, private router: Router, private location: Location) { }
 
   ngOnInit(): void {
 
-    this.restaurantesService.cargarPreguntasFrecuentes().subscribe(misPreguntasFrecuentes=> {
-     console.log(misPreguntasFrecuentes);
-     this.arrayPreguntaFrecuente = Object.values(misPreguntasFrecuentes);
-    this.setPreguntasFrecuentes(this.arrayPreguntaFrecuente);
-     });
 
+    this.frecuentesService.cargarPreguntasFrecuentes().subscribe(misPreguntas => {
+      this.arrayPreguntaFrecuente = Object.values(misPreguntas);
+      console.log(this.arrayPreguntaFrecuente);
+      this.setPreguntasFrecuentes(this.arrayPreguntaFrecuente);
+
+    });
   }
 
-
-  //Metodo para arreglo version video
   setPreguntasFrecuentes(arrayPreguntaFrecuente: PreguntaFrecuenteModel[]) {
     this.arrayPreguntaFrecuente = arrayPreguntaFrecuente;
   }

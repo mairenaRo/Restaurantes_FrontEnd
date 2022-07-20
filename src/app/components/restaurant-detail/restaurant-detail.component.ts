@@ -4,7 +4,7 @@ import { RestaurantesService } from 'src/app/services/restaurantes.service';
 import { RestauranteModel } from '../../models/restaurante.model';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { CommentsModel } from 'src/app/models/comments.modele';
+import { CommentsModel } from 'src/app/models/comments.model';
 import { CommentsService } from 'src/app/services/comments.service';
 import { NgForm } from '@angular/forms';
 import * as Notiflix from 'notiflix';

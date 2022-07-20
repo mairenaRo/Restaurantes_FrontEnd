@@ -29,6 +29,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { RestaurantesService } from './services/restaurantes.service';
 import { CommentsService } from './services/comments.service';
+import { FquestionsService } from './services/fquestions.service';
 
 
 // Aquí vamos a importar los componentes para luego, este es el cerebro
@@ -58,7 +59,7 @@ import { CommentsService } from './services/comments.service';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [RestaurantesService, CommentsService],
+  providers: [RestaurantesService, CommentsService, FquestionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
