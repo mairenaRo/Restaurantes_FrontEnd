@@ -27,19 +27,9 @@ export class LoginComponent implements OnInit {
     if (email != '' && password != '' && password.length >= 6) {
       this.userService.login(email, password)
         .then(res => {
-          if (res?.user?.emailVerified == true) {
-            console.log("Se registro: ", res);
-            Notiflix.Notify.success('Inicio de sesion con éxito.');
-            this.router.navigateByUrl('/home');
-          } else {
-            this.userService.sendVerificationEmail(res?.user);
-            alert('No has verificado el correo.Por favor hazlo.')
-          }
+          Notiflix.Notify.success('Inicio de sesion con éxito.');
+          this.router.navigateByUrl('/home');
         });
-        if (this.userService.emailVerifiedCheck(this.userService.getCurrentUser())==false){
-          this.userService.sendVerificationEmail(this.userService.getCurrentUser());
-          alert('No has verificado el correo.Por favor hazlo.');
-        }
     } else if (email != '' && password != ''){
       Notiflix.Notify.failure('Error, no puedes dejar campos en blanco.');
     } else {

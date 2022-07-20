@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logOutUser(){
-    Notiflix.Notify.success('Registro con éxito.');
+    Notiflix.Notify.success('Se cerró la sesión con éxito.');
     this.userService.logOut();
   }
 

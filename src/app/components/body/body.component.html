@@ -3,14 +3,6 @@
     <div>
         <img class="img-fluid" src="./assets/FeedPrincipal.png" />
     </div>
-    <div class="container" id="activePorfile" *ngIf="userLogged|async as user">
-        <h3 class="name">Bienvenido:</h3>
-        <img *ngIf="user.photoURL" [src]="user.photoURL" alt="">
-        <p class="name" *ngIf="user.displayName; else emailTamplate">{{user.displayName}}</p>
-        <ng-template #emailTamplate>
-            <p class="name">{{user.email}}</p>
-        </ng-template>
-    </div>
     <div class="container">
         <app-map></app-map>
     </div>
