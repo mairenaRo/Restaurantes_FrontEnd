@@ -28,6 +28,8 @@ import { RestaurantDetailComponent } from './components/restaurant-detail/restau
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { RestaurantesService } from './services/restaurantes.service';
+import { CommentsService } from './services/comments.service';
+
 
 // Aquí vamos a importar los componentes para luego, este es el cerebro
 
@@ -54,9 +56,9 @@ import { RestaurantesService } from './services/restaurantes.service';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [RestaurantesService],
+  providers: [RestaurantesService, CommentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

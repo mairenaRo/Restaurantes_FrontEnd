@@ -33,30 +33,6 @@ export class RestaurantesService {
 
 
 
-
-    //Crear arreglo
-    // private crearArreglo(restaurantesObj: any) {
-
-    //   const restaurantes: RestauranteModel[] = [];
-
-    //   //ESTAS 2 FUNCIONAN
-    //   console.log(restaurantesObj);
-
-    //   if (restaurantesObj == null) { return []; }
-
-    //   //ESTO DE AQUI ES PARA VERLO COMO UN ARREGLO
-    //   /*  Object.keys(restaurantesObj).forEach(key => {
-    //      const restaurante: RestauranteModel = restaurantesObj[key];
-    //      restaurante.id = key;
-    //      restaurantes.push(restaurante);
-    //    }); */
-
-    //   return restaurantes;
-    //   //return 'hola mundo';
-    // }
-
-
-
   }
 
 }

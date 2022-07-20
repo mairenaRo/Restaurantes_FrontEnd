@@ -72,4 +72,12 @@ export class UserService{
     emailVerifiedCheck(user: any){
         return user.emailVerified;
     }
+
+
+    async getUid(){
+
+        const user =await this.auth.currentUser;
+        return user?.email;
+
+    }
 }
