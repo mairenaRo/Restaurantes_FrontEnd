@@ -6,6 +6,7 @@ export class RestauranteModel {
   descripcionDetalle: string;
   nombre: string;
   descripcion: string;
+  foto: string;
   precio: string;
   valoracion: number;
   lat: number;
@@ -13,10 +14,11 @@ export class RestauranteModel {
 
 
 
-  constructor(id: any, descripcionDetalle: string, descripcion: string, lat: number, lon: number, nombre: string, precio: string, valoracion: number) {
+  constructor(id: any, descripcionDetalle: string, foto: string, descripcion: string, lat: number, lon: number, nombre: string, precio: string, valoracion: number) {
 
     this.id = id;
     this.descripcionDetalle = descripcionDetalle;
+    this.foto = foto;
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;
